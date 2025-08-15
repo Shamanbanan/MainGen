@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>MainGen Prototype</title>
+</head>
+<body>
+  <h1>MainGen Prototype</h1>
+
+  <section>
+    <h2>Signup</h2>
+    <form id="signup-form">
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button type="submit">Sign up</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Signin</h2>
+    <form id="signin-form">
+      <input type="email" id="signin-email" placeholder="Email" required />
+      <input type="password" id="signin-password" placeholder="Password" required />
+      <button type="submit">Sign in</button>
+    </form>
+    <p>Token: <span id="token"></span></p>
+  </section>
+
+  <section>
+    <h2>Create Tree</h2>
+    <form id="tree-form">
+      <input type="text" id="tree-name" placeholder="Tree Name" required />
+      <button type="submit">Create</button>
+    </form>
+    <p>Tree ID: <span id="tree-id"></span></p>
+  </section>
+
+  <section>
+    <h2>Add Person</h2>
+    <form id="person-form">
+      <input type="text" id="person-first" placeholder="First Name" required />
+      <input type="text" id="person-last" placeholder="Last Name" required />
+      <button type="submit">Add Person</button>
+    </form>
+    <ul id="people-list"></ul>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
