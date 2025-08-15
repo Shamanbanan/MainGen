@@ -1,4 +1,7 @@
 from fastapi import Depends, FastAPI, Header, HTTPException, status
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+import pathlib
 
 from .auth import token_store, user_store
 from .schemas import (
@@ -14,6 +17,14 @@ from .schemas import (
 )
 
 app = FastAPI(title="MainGen")
+
+static_dir = pathlib.Path(__file__).parent / "static"
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
+
+@app.get("/", response_class=FileResponse)
+def read_index():
+    return FileResponse(static_dir / "index.html")
 
 # In-memory stores
 class TreeStore:

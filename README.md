@@ -14,6 +14,8 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+Open http://localhost:8000/ in a browser to use a minimal web interface for signing up, creating a tree, and adding persons.
+
 ## Running tests
 
 ```bash

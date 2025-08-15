@@ -34,3 +34,9 @@ def test_create_tree_and_person():
     list_res = client.get(f"/trees/{tree_id}/persons", headers=headers)
     assert list_res.status_code == 200
     assert len(list_res.json()) == 1
+
+
+def test_index_served():
+    res = client.get("/")
+    assert res.status_code == 200
+    assert "MainGen Prototype" in res.text
